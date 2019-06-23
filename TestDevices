@@ -1,0 +1,64 @@
+public class TestDevices {
+
+	public static void main(String[] args) {
+			
+		 	    Screen aPhoneScreen = new Screen(10, 20, 15, 25);
+	        Case aPhoneCase = new Case();
+	        Speaker aPhoneSpeaker = new Speaker(100, 10);
+	        Microphone aPhoneMicrophone = new Microphone(50, 20);
+	       
+	        System.out.println(aPhoneScreen.toString());
+	        System.out.println(aPhoneSpeaker.toString());
+	        System.out.println(aPhoneMicrophone.toString());
+	        
+		      aPhoneScreen.colorScreen("blue");
+		      aPhoneScreen.setPixel(5, "yellow");
+		      System.out.println(aPhoneScreen.toString());
+		        
+
+	        Smartphone smartphone = new Smartphone(aPhoneScreen, aPhoneCase, aPhoneSpeaker, aPhoneMicrophone);
+	        Smartphone smartphone2 = new Smartphone(5,8,5,3,500,10,45,2);
+
+	        System.out.println();
+	        System.out.println("Smartphone 1: " + smartphone);
+	          
+	        	        
+	        System.out.println();
+	        System.out.println("class Main - Press volume up");
+	        smartphone.pressVolumeUp();
+	        System.out.println();
+	        System.out.println("class Main - Press power button");
+	        smartphone.getTheCase().pressPowerButton();
+	        System.out.println();
+	        System.out.println("class Main - Press volume down");
+	        smartphone.pressVolumeDown();
+	        System.out.println();
+	        System.out.println("class Main - Increase mic volume");
+	        smartphone.increaseMicrophoneVolume();
+	        System.out.println();
+	        System.out.println("class Main - Decrease mic volume");
+	        smartphone.decreaseMicrophoneVolume();
+	        System.out.println();
+
+	        System.out.println("Smartphone 2: " + smartphone2);
+	        System.out.println("class Main - Press volume up");
+	        smartphone2.pressVolumeUp();
+	        System.out.println();
+	        System.out.println("class Main - Press volume down");
+	        smartphone2.pressVolumeDown();
+	        System.out.println();
+	        System.out.println("class Main - Increase mic volume");
+	        smartphone2.increaseMicrophoneVolume();
+	        System.out.println();
+	        System.out.println("class Main - Decrease mic volume");
+	        smartphone2.decreaseMicrophoneVolume();
+	        System.out.println();
+	        System.out.println("class Main - Mute mic");
+	        smartphone2.muteMicrophone();
+	        System.out.println();
+	        System.out.println("class Main - Silence mode");
+	        smartphone2.setSilenceMode();
+	        System.out.println();
+	
+	    }
+	}
