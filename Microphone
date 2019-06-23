@@ -1,0 +1,44 @@
+public class Microphone {
+	
+	private int maxVolume;
+    private int crtVolume;
+
+    public Microphone(int maxVolume){
+
+        this.crtVolume += (25/100) * maxVolume;
+    }
+
+    public Microphone(int maxVolume, int crtVolume){
+        this.maxVolume = maxVolume;
+        this.crtVolume = crtVolume;
+    }
+
+    public boolean increaseVolume(){
+    	System.out.println("class Microphone: Volume is increased with 1");
+        if(this.crtVolume<this.maxVolume){
+            this.crtVolume++;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean decreaseVolume(){
+    	System.out.println("class Microphone: Volume is decreased with 1");
+        if(this.crtVolume>0){
+            this.crtVolume--;
+            return true;
+        }
+        return false;
+    }
+
+    public void muteMicrophone(){
+    	System.out.println("class Microphone: Volume is set to 0");
+        this.crtVolume = 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Max vol: " + this.maxVolume + " Crt vol: " + this.crtVolume;
+
+    }
+}
