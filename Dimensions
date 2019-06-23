@@ -1,0 +1,18 @@
+
+public class Dimensions {
+
+	private int width;
+	private int length;
+	private int depth;
+
+	public Dimensions(int width, int length, int depth){
+		this.width = width;
+		this.length = length;
+		this.depth = depth;
+	}
+
+	public String toString() {
+		return "Dimensions are:  width: " + this.width + " length: " + this.length + " depth: " + this.depth;
+	}
+
+}
