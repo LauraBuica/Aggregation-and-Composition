@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+public class Screen {
+
+	private ArrayList<Pixel> pixelsList;
+	private int noOfPixels;
+	private Pixel thePixel;
+	private final Dimensions dimensions;
+
+	public Screen(int noOfPixels, int width, int length, int depth) {
+		this.pixelsList = new ArrayList<Pixel>(noOfPixels);
+		this.dimensions = new Dimensions(width, length, depth);
+		for(int i=0;i<noOfPixels;i++) {
+			Pixel p = new Pixel();
+			pixelsList.add(p);
+		}
+	}
+
+	public int getNoOfPixels() {
+		return noOfPixels;
+	}
+
+	public void setNoOfPixels(int noOfPixels) {
+		this.noOfPixels = noOfPixels;
+	}
+
+	public void setPixel(int indexx, String color) {
+		pixelsList.get(indexx).setPixel(color);
+
+	}
+
+	public void colorScreen(String color) {
+		for (int i=0; i<pixelsList.size(); i++) {
+			pixelsList.get(i).setPixel(color);
+
+		}
+	}
+
+	@Override
+	public String toString() {
+		for(int i=0; i<pixelsList.size(); i++) {
+			System.out.println(pixelsList.get(i).toString());
+		}
+		
+		return "No of pixels: " + this.pixelsList.size();
+
+	}
+}
